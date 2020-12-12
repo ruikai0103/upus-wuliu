@@ -96,7 +96,7 @@ class LOPClass(Write_csv):
         html = etree.HTML(html)
         for i in html.xpath("//div[contains(@class,'col-sm-offset-1')]"):
             # 获取单号
-            tracking_number = i.xpath('normalize-space(.//div[@class="tracking-number"]/text())')
+            tracking_number = i.xpath('normalize-space(.//span[@class="tracking-number"]/text())')
             # 获取状态
             state = i.xpath('normalize-space(.//div[@class="delivery_status"]/h2/strong/text())')
             sign_time = i.xpath('normalize-space(.//div[@class="status_feed"]/p[1]/text())')
