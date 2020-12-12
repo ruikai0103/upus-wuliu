@@ -50,7 +50,7 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "Upus物流查询系统"))
         self.openFile.setText(_translate("Form", "打开"))
         self.pushButton.setText(_translate("Form", "查询"))
         self.label.setText(_translate("Form", "线程数："))
