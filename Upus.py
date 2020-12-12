@@ -1,10 +1,14 @@
 # -*- coding:utf-8 -*-
+
+
 import requests
 import xlrd
 import sys
 from math import ceil
 from retrying import retry
+from lxml import etree
 from Write_csv import Write_csv
+from GetProxies import GetProxies
 
 
 class LOPClass(Write_csv):
@@ -12,7 +16,8 @@ class LOPClass(Write_csv):
         super().__init__()
         # 按照多少分割
         self.split_num = 35
-        self.file_path = f'./{file_path}.xlsx'
+        # self.file_path = f'./{file_path}.xlsx'
+        self.file_path = file_path
         # 访问URL地址
         self.root_url = "https://tools.usps.com/go/TrackConfirmAction"
         self.headers = {
@@ -32,6 +37,7 @@ class LOPClass(Write_csv):
         self.to_csv = f"{self.file_path}副本"
         # 创建一个csv 文件
         self.create_csv()
+        self.proxiesClass = GetProxies()
 
     def read_file(self):
         """
@@ -68,32 +74,48 @@ class LOPClass(Write_csv):
     def run(self):
         pass
 
-    @retry()
+    # @retry()
     def get_response(self, params):
-        html = requests.get(url=self.root_url + params, headers=self.headers, timeout=10).text
+        self.headers['Proxy-Authorization'] = self.proxiesClass.get_proxies()
+        url = self.root_url + params
+        html = requests.get(url=url, headers=self.headers, timeout=10).text
         return html
 
     def get_data(self):
         for params in self.item_list:
             params = f"?tRef=fullpage&tLc={len(params) + 1}&text28777=&tLabels=" + ",".join(params)
             html = self.get_response(params)
-            print(html)
+            # print(html)
+            self.parse_response(html)
 
-    def parse_response(self):
+    def parse_response(self, html):
         """
         解析HTML页面
         :return:
         """
-        pass
+        html = etree.HTML(html)
+        for i in html.xpath("//div[contains(@class,'col-sm-offset-1')]"):
+            # 获取单号
+            tracking_number = i.xpath('normalize-space(.//div[@class="tracking-number"]/text())')
+            # 获取状态
+            state = i.xpath('normalize-space(.//div[@class="delivery_status"]/h2/strong/text())')
+            sign_time = i.xpath('normalize-space(.//div[@class="status_feed"]/p[1]/text())')
+            sign_log = i.xpath('normalize-space(.//div[@class="status_feed"]/p[last()]/text())')
 
-    @staticmethod
-    def get_proxies(num):
-        """
-        获取IP的静态方法
-        :param:需要获取的个数
-        :return: IP列表
-        """
-        pass
+            # 第一个物流和第一个物流的时间
+            start_log = i.xpath(
+                'normalize-space(.//div[@class="panel-actions-content thPanalAction"]/span[last()-1]/text())')
+            start_time = i.xpath(
+                'normalize-space(.//div[@class="panel-actions-content thPanalAction"]/hr[last()-1]/following-sibling::span[1]/strong/text())')
+            # 获取第二个物流和时间
+            two_log = i.xpath(
+                'normalize-space(.//div[@class="panel-actions-content thPanalAction"]/hr[last()-2]/following-sibling::span[3]/text())')
+            two_time = i.xpath(
+                'normalize-space(.//div[@class="panel-actions-content thPanalAction"]/hr[last()-2]/following-sibling::span[1]/strong/text())')
+
+            self.result_list = [tracking_number, state, sign_time, sign_log, start_time, start_log, two_time, two_log]
+            # yield [tracking_number,state, sign_time, sign_log, start_time, start_log, two_time, two_log]
+            self.write_excel(self.result_list)
 
 
 if __name__ == '__main__':

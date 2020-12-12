@@ -1,0 +1,26 @@
+单号,状态,签收时间,签收物流,开始时间,开始物流,第二时间,第二物流
+单号,状态,签收时间,签收物流,开始时间,开始物流,第二时间,第二物流
+单号,状态,签收时间,签收物流,开始时间,开始物流,第二时间,第二物流
+单号,状态,签收时间,签收物流,开始时间,开始物流,第二时间,第二物流
+单号,状态,签收时间,签收物流,开始时间,开始物流,第二时间,第二物流
+单号,状态,签收时间,签收物流,开始时间,开始物流,第二时间,第二物流
+单号,状态,签收时间,签收物流,开始时间,开始物流,第二时间,第二物流
+单号,状态,签收时间,签收物流,开始时间,开始物流,第二时间,第二物流
+单号,状态,签收时间,签收物流,开始时间,开始物流,第二时间,第二物流
+"['', 'Delivered', 'November 30, 2020 at 11:20 am', 'DENVER,\xa0CO\xa080223\xa0', 'November 24, 2020, 11:56 pm', 'COMPTON,\xa0CA\xa090220\xa0', 'November 28, 2020, 6:27 pm', 'DENVER,\xa0CO\xa080209\xa0']"
+"['', 'Delivered', 'November 28, 2020 at 11:44 am', 'CULVER CITY,\xa0CA\xa090232\xa0', 'November 25, 2020', '', 'November 27, 2020, 8:40 pm', 'CULVER CITY,\xa0CA\xa090230\xa0']"
+"['', 'Delivered', 'December 2, 2020 at 10:23 am', 'MONTEVIDEO,\xa0MN\xa056265\xa0', 'November 25, 2020, 9:46 am', 'COMPTON,\xa0CA\xa090220\xa0', 'November 28, 2020, 12:35 am', 'MELROSE PARK,\xa0IL\xa060160\xa0']"
+"['', 'Delivered', 'December 1, 2020 at 3:36 pm', 'PASADENA,\xa0MD\xa021122\xa0', 'November 25, 2020, 4:11 am', 'COMPTON,\xa0CA\xa090220\xa0', 'November 27, 2020, 4:34 pm', 'ELKRIDGE,\xa0MD\xa021075\xa0']"
+"['', 'Delivered', 'December 1, 2020 at 1:38 pm', 'MAUREPAS,\xa0LA\xa070449\xa0', 'November 26, 2020, 4:32 am', 'COMPTON,\xa0CA\xa090220\xa0', 'November 27, 2020, 5:56 pm', 'HOUSTON,\xa0TX\xa077073\xa0']"
+"['', 'Delivered', 'December 1, 2020 at 1:38 pm', 'NEW YORK,\xa0NY\xa010028\xa0', 'November 26, 2020, 7:17 am', 'COMPTON,\xa0CA\xa090220\xa0', 'November 29, 2020, 7:44 pm', 'AVENEL,\xa0NJ\xa007001\xa0']"
+"['', 'Delivered', 'December 1, 2020 at 1:53 pm', 'BROOKLYN,\xa0NY\xa011221\xa0', 'November 25, 2020, 6:14 am', 'COMPTON,\xa0CA\xa090220\xa0', 'November 27, 2020, 9:17 pm', 'AVENEL,\xa0NJ\xa007001\xa0']"
+"['', 'Alert', 'November 29, 2020 at 1:10 am', '', 'November 25, 2020, 12:57 am', 'COMPTON,\xa0CA\xa090220\xa0', 'November 27, 2020, 2:35 pm', 'HAWTHORNE,\xa0CA\xa090250\xa0']"
+"['', 'Delivered', 'December 1, 2020 at 3:26 pm', 'ADRIAN,\xa0MI\xa049221\xa0', 'November 26, 2020, 7:44 am', 'COMPTON,\xa0CA\xa090220\xa0', 'November 28, 2020, 10:49 am', 'STOW,\xa0OH\xa044224\xa0']"
+"['', 'Delivered', 'December 1, 2020 at 6:08 pm', 'OXNARD,\xa0CA\xa093036\xa0', 'November 28, 2020', '', 'December 1, 2020, 3:29 am', 'OXNARD,\xa0CA\xa093036\xa0']"
+"['', 'Delivered', 'December 7, 2020 at 2:34 pm', 'KEARNEYSVILLE,\xa0WV\xa025430\xa0', 'November 26, 2020, 3:58 am', 'COMPTON,\xa0CA\xa090220\xa0', 'November 28, 2020, 11:23 am', 'ELKRIDGE,\xa0MD\xa021075\xa0']"
+"['', 'Delivered', 'December 1, 2020 at 2:00 pm', 'PHILADELPHIA,\xa0PA\xa019102\xa0', 'November 26, 2020, 7:17 am', 'COMPTON,\xa0CA\xa090220\xa0', 'November 29, 2020, 5:58 pm', 'AVENEL,\xa0NJ\xa007001\xa0']"
+"['', 'Delivered', 'November 30, 2020 at 1:10 pm', 'OAK RIDGE,\xa0NJ\xa007438\xa0', 'November 26, 2020, 7:17 am', 'COMPTON,\xa0CA\xa090220\xa0', 'November 29, 2020, 7:50 pm', 'AVENEL,\xa0NJ\xa007001\xa0']"
+"['', 'Delivered', 'December 1, 2020 at 11:20 am', 'SAINT CLAIR SHORES,\xa0MI\xa048080\xa0', 'November 26, 2020, 7:44 am', 'COMPTON,\xa0CA\xa090220\xa0', 'November 28, 2020, 10:49 am', 'STOW,\xa0OH\xa044224\xa0']"
+"['', 'Delivered', 'December 1, 2020 at 10:54 am', 'CHATTANOOGA,\xa0TN\xa037421\xa0', 'November 27, 2020, 12:41 pm', 'COMPTON,\xa0CA\xa090220\xa0', 'November 29, 2020, 4:04 pm', 'FOREST PARK,\xa0GA\xa030297\xa0']"
+"['', 'Delivered', 'November 30, 2020 at 10:09 am', 'SUNNYSIDE,\xa0NY\xa011104\xa0', 'November 25, 2020, 6:14 am', 'COMPTON,\xa0CA\xa090220\xa0', 'November 27, 2020, 9:19 pm', 'AVENEL,\xa0NJ\xa007001\xa0']"
+"['', 'Delivered', 'December 2, 2020 at 10:06 am', 'SAINT PAUL,\xa0MN\xa055117\xa0', 'November 25, 2020, 9:46 am', 'COMPTON,\xa0CA\xa090220\xa0', 'November 28, 2020, 12:35 am', 'MELROSE PARK,\xa0IL\xa060160\xa0']"
