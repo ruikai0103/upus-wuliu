@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b24cc0a-cc3c-42ca-9be2-37e36c11f0a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/PyqtForm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LOP物流.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/11.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/11.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/11.xlsx副本" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetProxies.py" beforeDir="false" afterPath="$PROJECT_DIR$/GetProxies.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Upus.py" beforeDir="false" afterPath="$PROJECT_DIR$/Upus.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Write_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/Write_csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyQt_upus.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyQt_upus.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyQt_upus.ui" beforeDir="false" afterPath="$PROJECT_DIR$/pyQt_upus.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyqt_form.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +185,7 @@
       <updated>1607694989759</updated>
       <workItem from="1607694990974" duration="5545000" />
       <workItem from="1607734859358" duration="18594000" />
-      <workItem from="1607783586013" duration="17202000" />
+      <workItem from="1607783586013" duration="17939000" />
     </task>
     <servers />
   </component>
@@ -289,16 +273,6 @@
           <url>file://$PROJECT_DIR$/Upus.py</url>
           <line>85</line>
           <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>58</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>114</line>
-          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
