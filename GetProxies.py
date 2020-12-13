@@ -31,7 +31,12 @@ class GetProxies:
         auth = "sign=" + sign + "&" + "orderno=" + self.orderno + "&" + "timestamp=" + timestamp
         return auth
 
+
 if __name__ == '__main__':
+    import requests
     proxies = GetProxies()
     auto = proxies.get_proxies()
-    print(auto)
+    headers = {}
+    headers['Proxy-Authorization'] = auto
+    html = requests.get("https://www.ip.cn/api/index?ip=&type=0",headers=headers,proxies=proxies.proxies,verify=False)
+    print(html.json())

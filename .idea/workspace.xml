@@ -2,14 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b24cc0a-cc3c-42ca-9be2-37e36c11f0a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GetProxies.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyqt_form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LOP物流.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LOP物流.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PyqtForm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/LOP物流.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/11.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/11.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/11.xlsx副本" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GetProxies.py" beforeDir="false" afterPath="$PROJECT_DIR$/GetProxies.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Upus.py" beforeDir="false" afterPath="$PROJECT_DIR$/Upus.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/response" beforeDir="false" afterPath="$PROJECT_DIR$/response" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Write_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/Write_csv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyQt_upus.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyQt_upus.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyQt_upus.ui" beforeDir="false" afterPath="$PROJECT_DIR$/pyQt_upus.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyqt_form.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,29 +56,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.pyqt_form">
-    <configuration name="CallWeatherWin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LOP物流" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../随意/pyQt5测试" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../随意/pyQt5测试/CallWeatherWin.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.PyqtForm (1)">
     <configuration name="GetProxies" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LOP物流" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -92,7 +79,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pyQt_upus" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="PyqtForm (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LOP物流" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -105,7 +92,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyQt_upus.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PyqtForm.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -114,7 +101,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pyqt_form" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="PyqtForm" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LOP物流" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -127,7 +114,29 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyqt_form.py" />
+      <option name="SCRIPT_NAME" value="E:\工作\upus-wuliu\PyqtForm.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pic" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LOP物流" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pic.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -160,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.pyqt_form" />
-        <item itemvalue="Python.GetProxies" />
-        <item itemvalue="Python.pyQt_upus" />
+        <item itemvalue="Python.PyqtForm (1)" />
+        <item itemvalue="Python.pic" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.CallWeatherWin" />
+        <item itemvalue="Python.GetProxies" />
+        <item itemvalue="Python.PyqtForm" />
       </list>
     </recent_temporary>
   </component>
@@ -192,6 +201,7 @@
       <updated>1607694989759</updated>
       <workItem from="1607694990974" duration="5545000" />
       <workItem from="1607734859358" duration="18594000" />
+      <workItem from="1607783586013" duration="17202000" />
     </task>
     <servers />
   </component>
@@ -199,82 +209,109 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="696" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607699958653">
+    <state x="696" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607787329601">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="696" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1607699958653" />
+    <state x="696" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1607787329601" />
     <state width="892" height="466" key="DebuggerActiveHint" timestamp="1607760413520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="892" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1607760413520" />
-    <state width="1876" height="342" key="GridCell.Tab.0.bottom" timestamp="1607765698192">
+    <state width="1877" height="238" key="GridCell.Tab.0.bottom" timestamp="1607843397680">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607765698192" />
-    <state width="1876" height="342" key="GridCell.Tab.0.center" timestamp="1607765698191">
+    <state width="1877" height="238" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607843397680" />
+    <state width="1877" height="238" key="GridCell.Tab.0.center" timestamp="1607843397680">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607765698191" />
-    <state width="1876" height="342" key="GridCell.Tab.0.left" timestamp="1607765698191">
+    <state width="1877" height="238" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607843397680" />
+    <state width="1877" height="238" key="GridCell.Tab.0.left" timestamp="1607843397680">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607765698191" />
-    <state width="1876" height="342" key="GridCell.Tab.0.right" timestamp="1607765698192">
+    <state width="1877" height="238" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607843397680" />
+    <state width="1877" height="238" key="GridCell.Tab.0.right" timestamp="1607843397680">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607765698192" />
-    <state width="1876" height="342" key="GridCell.Tab.1.bottom" timestamp="1607765698192">
+    <state width="1877" height="238" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607843397680" />
+    <state width="1301" height="344" key="GridCell.Tab.1.bottom" timestamp="1607838141609">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607765698192" />
-    <state width="1876" height="342" key="GridCell.Tab.1.center" timestamp="1607765698192">
+    <state width="1301" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607838141609" />
+    <state width="1301" height="344" key="GridCell.Tab.1.center" timestamp="1607838141609">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607765698192" />
-    <state width="1876" height="342" key="GridCell.Tab.1.left" timestamp="1607765698192">
+    <state width="1301" height="344" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607838141609" />
+    <state width="1301" height="344" key="GridCell.Tab.1.left" timestamp="1607838141609">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607765698192" />
-    <state width="1876" height="342" key="GridCell.Tab.1.right" timestamp="1607765698192">
+    <state width="1301" height="344" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607838141609" />
+    <state width="1301" height="344" key="GridCell.Tab.1.right" timestamp="1607838141609">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607765698192" />
-    <state x="463" y="151" key="SettingsEditor" timestamp="1607734881220">
+    <state width="1301" height="344" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607838141609" />
+    <state x="463" y="151" key="SettingsEditor" timestamp="1607783604202">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="463" y="151" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607734881220" />
+    <state x="463" y="151" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607783604202" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1607699327168">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1607699327168" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607696938469">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607785686523">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607696938469" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607785686523" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>117</line>
-          <option name="timeStamp" value="7" />
+          <url>file://$PROJECT_DIR$/Upus.py</url>
+          <line>93</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PyqtForm.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GetProxies.py</url>
+          <line>40</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PyqtForm.py</url>
+          <line>62</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Upus.py</url>
-          <line>80</line>
-          <option name="timeStamp" value="10" />
+          <line>85</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test.py</url>
+          <line>58</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test.py</url>
+          <line>114</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/upus_wuliu$pyQt_upus.coverage" NAME="pyQt_upus Coverage Results" MODIFIED="1607762213651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/upus_wuliu$GetProxies.coverage" NAME="GetProxies Coverage Results" MODIFIED="1607764645750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/upus_wuliu$.coverage" NAME="中国天气 Coverage Results" MODIFIED="1607756302791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../随意/pyQt5测试" />
-    <SUITE FILE_PATH="coverage/upus_wuliu$test.coverage" NAME="test Coverage Results" MODIFIED="1607760531162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/upus_wuliu$CallWeatherWin.coverage" NAME="CallWeatherWin Coverage Results" MODIFIED="1607757360494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../随意/pyQt5测试" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$pyqt_form.coverage" NAME="pyqt_form Coverage Results" MODIFIED="1607783669305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LOP$LOP.coverage" NAME="LOP Coverage Results" MODIFIED="1607699889101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/upus_wuliu$pyqt_form.coverage" NAME="pyqt_form Coverage Results" MODIFIED="1607765627290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$test.coverage" NAME="test Coverage Results" MODIFIED="1607838141597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$pyQt_upus.coverage" NAME="pyQt_upus Coverage Results" MODIFIED="1607762213651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$.coverage" NAME="中国天气 Coverage Results" MODIFIED="1607756302791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../随意/pyQt5测试" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$pic.coverage" NAME="pic Coverage Results" MODIFIED="1607843085395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$PyqtForm__1_.coverage" NAME="PyqtForm (1) Coverage Results" MODIFIED="1607843387905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$CallWeatherWin.coverage" NAME="CallWeatherWin Coverage Results" MODIFIED="1607757360494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../随意/pyQt5测试" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$GetProxies.coverage" NAME="GetProxies Coverage Results" MODIFIED="1607829466448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

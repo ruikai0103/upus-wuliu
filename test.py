@@ -1,146 +1,125 @@
-# from lxml import etree
-# import re
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'E:\hello\zhuye.ui'
 #
+# Created by: PyQt5 UI code generator 5.11.2
 #
-# with open("response",'r',encoding="utf-8") as f:
-#     text = f.read()
-#
-# html = etree.HTML(text)
-# for i in html.xpath("//div[contains(@class,'col-sm-offset-1')]"):
-#     # 获取状态
-#     state = i.xpath('normalize-space(.//div[@class="delivery_status"]/h2/strong/text())')
-#     sign_time = i.xpath('normalize-space(.//div[@class="status_feed"]/p[1]/text())')
-#     sign_log = i.xpath('normalize-space(.//div[@class="status_feed"]/p[last()]/text())')
-#
-#     # 第一个物流和第一个物流的时间
-#     start_log = i.xpath('normalize-space(.//div[@class="panel-actions-content thPanalAction"]/span[last()-1]/text())')
-#     start_time = i.xpath('normalize-space(.//div[@class="panel-actions-content thPanalAction"]/hr[last()-1]/following-sibling::span[1]/strong/text())')
-#     # 获取第二个物流和时间
-#     two_log = i.xpath('normalize-space(.//div[@class="panel-actions-content thPanalAction"]/hr[last()-2]/following-sibling::span[3]/text())')
-#     two_time = i.xpath('normalize-space(.//div[@class="panel-actions-content thPanalAction"]/hr[last()-2]/following-sibling::span[1]/strong/text())')
-#
-#     # 跟新数据
-#     # state = state[0] if state else None
-#     # sign_time = sign_time[0] if sign_time else None
-#     # sign_log = sign_log[0] if sign_log else None
-#
-#
-#     print(state,sign_log,sign_time)
-#     # print(start_time)
-#     # print(start_log)
-#     # print(two_time)
-#     # print(two_log)
-#     print([state,sign_time,sign_log,start_time,start_log,two_time,two_log])
+# WARNING! All changes made in this file will be lost!
+
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-import pandas as pd
-import numpy as np
 
 
-class Ui_MainWindow(QMainWindow):
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(478, 465)
 
-    def __init__(self):
-        super().__init__()
-        self.setupUi()
-        self.retranslateUi(self)
-
-    def setupUi(self):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(666, 488)
-        self.centralWidget = QtWidgets.QWidget(MainWindow)
-        self.centralWidget.setObjectName("centralWidget")
-        self.retranslateUi(MainWindow)
-
-        self.tableWidget = QtWidgets.QTableWidget(self.centralWidget)
-        self.tableWidget.setGeometry(QtCore.QRect(0, 60, 813, 371))
-        self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(0)
-        self.tableWidget.setRowCount(0)
-        self.tableWidget.setStyleSheet("selection-background-color:pink")
-        self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.tableWidget.raise_()
-
-        self.pushButton = QtWidgets.QPushButton(self.centralWidget)
-        self.pushButton.setGeometry(QtCore.QRect(90, 20, 75, 23))
+        self.pushButton = QtWidgets.QPushButton(Dialog)
+        self.pushButton.setGeometry(QtCore.QRect(190, 60, 93, 28))
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.setText("打开")
-        MainWindow.setCentralWidget(self.centralWidget)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.textEdit = QtWidgets.QTextEdit(Dialog)
+        self.textEdit.setGeometry(QtCore.QRect(60, 170, 351, 251))
+        self.textEdit.setObjectName("textEdit")
 
-        self.pushButton.clicked.connect(self.openfile)
-        self.pushButton.clicked.connect(self.creat_table_show)
+        self.retranslateUi(Dialog)
+        self.pushButton.clicked.connect(Dialog.yunxing)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "一颗数据小白菜"))
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.pushButton.setText(_translate("Dialog", "PushButton"))
 
 
-    def openfile(self):
+from PyQt5 import QtCore, QtGui, QtWidgets
+import requests
+import re
+from threading import Thread
+import PyQt5.sip
 
-        ###获取路径===================================================================
-
-        openfile_name = QFileDialog.getOpenFileName(self,'选择文件','','Excel files(*.xlsx , *.xls)')
-
-        #print(openfile_name)
-        global path_openfile_name
-
-
-        ###获取路径====================================================================
-
-        path_openfile_name = openfile_name[0]
+import time
+from PyQt5.QtWidgets import QApplication, QWidget
 
 
-    def creat_table_show(self):
-        ###===========读取表格，转换表格，===========================================
-        if len(path_openfile_name) > 0:
-            input_table = pd.read_excel(path_openfile_name)
-        #print(input_table)
-            input_table_rows = input_table.shape[0]
-            input_table_colunms = input_table.shape[1]
-        #print(input_table_rows)
-        #print(input_table_colunms)
-            input_table_header = input_table.columns.values.tolist()
-        #print(input_table_header)
 
-        ###===========读取表格，转换表格，============================================
-        ###======================给tablewidget设置行列表头============================
+# 1.首先 继承QtCore.QThrea这个类 （这个类中是在按钮点击之后的槽函数进行实例化与运行的）
+class Runthread(QtCore.QThread):
+    # 4定义信号参数为str类型
+    updata_date = QtCore.pyqtSignal(str)
 
-            self.tableWidget.setColumnCount(input_table_colunms)
-            self.tableWidget.setRowCount(input_table_rows)
-            self.tableWidget.setHorizontalHeaderLabels(input_table_header)
+    # 2进行父类的初始化
+    def __init__(self, kw):
+        super(Runthread, self).__init__()
+        self.kw = kw
 
-        ###======================给tablewidget设置行列表头============================
+    # 3将要实现的逻辑代码存放到这个里面
+    def run(self):
 
-        ###================遍历表格每个元素，同时添加到tablewidget中========================
-            for i in range(input_table_rows):
-                input_table_rows_values = input_table.iloc[[i]]
-                #print(input_table_rows_values)
-                input_table_rows_values_array = np.array(input_table_rows_values)
-                input_table_rows_values_list = input_table_rows_values_array.tolist()[0]
-            #print(input_table_rows_values_list)
-                for j in range(input_table_colunms):
-                    input_table_items_list = input_table_rows_values_list[j]
-                #print(input_table_items_list)
-                # print(type(input_table_items_list))
+        print("开始")
+        self.get_url_page(self.kw)
+        print("结束")
 
-        ###==============将遍历的元素添加到tablewidget中并显示=======================
+    def get_url_page(self, leimu, ):
 
-                    input_table_items = str(input_table_items_list)
-                    newItem = QTableWidgetItem(input_table_items)
-                    newItem.setTextAlignment(Qt.AlignHCenter|Qt.AlignVCenter)
-                    self.tableWidget.setItem(i, j, newItem)
+        main_url = r'http://jwc.qfnu.edu.cn/' + leimu + '.htm'
+        rs = requests.get(main_url)
+        rs.encoding = "UTF-8"
+        p_index = re.compile(r"共.*?&nbsp;&nbsp;1/(.*?)&nbsp;</td>")
+        y_index = p_index.search(rs.text)
+        paginate = y_index.group(1)
+        for x in range(0, int(paginate)):
+            if x == 0:
+                fenye_url = main_url
 
-        ###================遍历表格每个元素，同时添加到tablewidget中========================
-        else:
-            self.centralWidget.show()
+            else:
+                fenye_url = "http://jwc.qfnu.edu.cn/" + leimu + "/" + str(x) + ".htm"
+            self.paqu(fenye_url, leimu)
 
-if __name__ == "__main__":
+    def paqu(self, url, leimu):
+        url_content = requests.get(url)
+        url_content.encoding = "UTF-8"
+        self.updata_date.emit(str(time.time()))
+        p = re.compile(r'<a href="(.*?)" target="_blank" title=".*?">(.*?)</a>\r\n   <span class="time">(.*?)</span>', )
+        for m in p.finditer(url_content.text):
+            time.sleep(1)
+
+            a = m.group(1) + "\n" + m.group(2) + "\n" + m.group(3)
+            # 5发送信号，触发打印函数（Display）
+            self.updata_date.emit(str(a))
+
+            print(m.group(1))
+            print(m.group(2))
+            print(m.group(3))
+            print(leimu)
+
+            print("\n")
+
+
+class MyCalc(QWidget):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.ui = Ui_Dialog()
+        self.ui.setupUi(self)
+
+    def yunxing(self):
+        #
+
+        self.myThread = Runthread("tz_j_")
+        # 6.接收信号并产生回调函数
+        self.myThread.updata_date.connect(self.Display)
+
+        self.myThread.start()
+
+    # 7我是回调函数
+    def Display(self, data):
+        self.ui.textEdit.append(data)
+
+
+if __name__ == '__main__':
     import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi()
-    MainWindow.show()
+
+    app = QApplication(sys.argv)
+
+    win = MyCalc()
+    win.show()
     sys.exit(app.exec_())

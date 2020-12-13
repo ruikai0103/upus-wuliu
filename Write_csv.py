@@ -10,7 +10,7 @@ class Write_csv:
         self.value_title = [['单号', '状态', '签收时间', '签收物流', '开始时间', '开始物流', '第二时间', '第二物流', ]]
 
     def write_excel(self, *args):
-        value = [[*args]]
+        value = [*args]
         data_df = DataFrame(value)
         data_df.to_csv(self.to_csv, index=self.index, mode=self.mode, header=self.header)
 
