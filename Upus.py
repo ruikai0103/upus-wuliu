@@ -100,7 +100,7 @@ class LOPClass(QtCore.QThread):
 
     def get_data(self, sleep_time=0):
         for param in self.item_list:
-            params = f"?tRef=fullpage&tLc={len(param) + 1}&text28777=&tLabels=" + ",".join(params)
+            params = f"?tRef=fullpage&tLc={len(param) + 1}&text28777=&tLabels=" + ",".join(param)
             try:
                 self.update_data.emit(f"当前携带参数个数共 {len(param)}  个")
                 html = self.get_response(params)
@@ -145,14 +145,3 @@ class LOPClass(QtCore.QThread):
             result_list = [tracking_number, state, sign_time, sign_log, start_time, start_log, two_time, two_log]
             self.csv.write_excel(result_list)
             self.update_data.emit(",".join(result_list))
-
-
-if __name__ == '__main__':
-    debug = True
-
-    if debug:
-        file_path = "11"
-    else:
-        file_path = input(f"请输入文件名，和程序同一目录：")
-    Lop = LOPClass(file_path)
-    Lop.get_data(1)

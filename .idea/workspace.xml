@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1b24cc0a-cc3c-42ca-9be2-37e36c11f0a4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyqtForm.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyqtForm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Upus.py" beforeDir="false" afterPath="$PROJECT_DIR$/Upus.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +20,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1lVvI1E7M8bZQi40E93qhiFeWaF" />
   <component name="ProjectLevelVcsManager">
@@ -186,21 +189,33 @@
       <workItem from="1607694990974" duration="5545000" />
       <workItem from="1607734859358" duration="18594000" />
       <workItem from="1607783586013" duration="18569000" />
+      <workItem from="1607907524734" duration="3703000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="696" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607787329601">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="696" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1607787329601" />
+    <state x="572" y="115" key="CommitChangelistDialog2" timestamp="1607930311850">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="572" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1607930311850" />
     <state width="892" height="466" key="DebuggerActiveHint" timestamp="1607760413520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="892" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1607760413520" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1607930271422">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607930271422" />
     <state width="1877" height="238" key="GridCell.Tab.0.bottom" timestamp="1607843397680">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -241,6 +256,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1607699327168" />
+    <state x="754" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607930279343">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="754" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607930279343" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607785686523">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -278,14 +297,14 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/upus_wuliu$pyqt_form.coverage" NAME="pyqt_form Coverage Results" MODIFIED="1607783669305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/LOP$LOP.coverage" NAME="LOP Coverage Results" MODIFIED="1607699889101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/upus_wuliu$test.coverage" NAME="test Coverage Results" MODIFIED="1607838141597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/upus_wuliu$pyQt_upus.coverage" NAME="pyQt_upus Coverage Results" MODIFIED="1607762213651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/upus_wuliu$.coverage" NAME="中国天气 Coverage Results" MODIFIED="1607756302791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../随意/pyQt5测试" />
     <SUITE FILE_PATH="coverage/upus_wuliu$pic.coverage" NAME="pic Coverage Results" MODIFIED="1607843085395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/upus_wuliu$PyqtForm__1_.coverage" NAME="PyqtForm (1) Coverage Results" MODIFIED="1607843387905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/upus_wuliu$CallWeatherWin.coverage" NAME="CallWeatherWin Coverage Results" MODIFIED="1607757360494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../随意/pyQt5测试" />
     <SUITE FILE_PATH="coverage/upus_wuliu$GetProxies.coverage" NAME="GetProxies Coverage Results" MODIFIED="1607829466448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$.coverage" NAME="中国天气 Coverage Results" MODIFIED="1607756302791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../随意/pyQt5测试" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$test.coverage" NAME="test Coverage Results" MODIFIED="1607838141597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$CallWeatherWin.coverage" NAME="CallWeatherWin Coverage Results" MODIFIED="1607757360494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../随意/pyQt5测试" />
+    <SUITE FILE_PATH="coverage/LOP$LOP.coverage" NAME="LOP Coverage Results" MODIFIED="1607699889101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$PyqtForm__1_.coverage" NAME="PyqtForm (1) Coverage Results" MODIFIED="1607843387905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$pyqt_form.coverage" NAME="pyqt_form Coverage Results" MODIFIED="1607783669305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

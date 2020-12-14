@@ -74,7 +74,6 @@ class Upus(QWidget):
 
 if __name__ == '__main__':
     get_pic(upus_ico, "upus.ico")
-    # os.remove('upus.ico')
     app = QApplication(sys.argv)
     upus = Upus()
     upus.show()
