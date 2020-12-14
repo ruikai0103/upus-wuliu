@@ -18,6 +18,7 @@ from GetProxies import GetProxies
 class LOPClass(QtCore.QThread):
     # 定义信号参数为list
     update_data = QtCore.pyqtSignal(str)
+    stop_singin = QtCore.pyqtSignal(bool)
 
     def __init__(self, file_path, sleep_time, thread_num):
         super().__init__()
@@ -87,6 +88,9 @@ class LOPClass(QtCore.QThread):
         print("开始了！")
         self.get_data(self.sleep_time)
         self.update_data.emit("-------------查询结束了-------------")
+        self.stop_singin.emit(True)
+
+
 
     @retry(stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=3)
     def get_response(self, params):
@@ -95,7 +99,7 @@ class LOPClass(QtCore.QThread):
         # self.update_data.emit(f"开始请求的URL为：{url}")
         # self.update_data.emit(f"当前参数为：{params}")
         html = requests.get(url=url, headers=self.headers, proxies=self.proxiesClass.proxies, verify=False,
-                            timeout=10).text
+                            timeout=30).text
         return html
 
     def get_data(self, sleep_time=0):

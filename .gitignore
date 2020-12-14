@@ -1,4 +1,4 @@
 dist
 .idea/*
 _pycache_/*
-PyqtForm.spec
+*.spec
