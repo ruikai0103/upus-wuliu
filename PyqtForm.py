@@ -46,10 +46,15 @@ class Upus(QWidget):
         self.myThread = LOPClass(file_path_name, sleep_time, thread_num, radio_ip_isChecked)
         # 接受信号产生回调参数
         self.myThread.update_data.connect(self.Display)
+        self.myThread.stop_singin.connect(self.Display_button)
         # 启动线程
         self.myThread.start()
         # 结束可以点击按钮
-        self.ui.pushButton.setEnabled(True)
+        # self.ui.pushButton.setEnabled(True)
+
+    def Display_button(self,bool):
+        if bool:
+            self.ui.pushButton.setEnabled(True)
 
     def radio_change(self):
         pass
@@ -79,7 +84,6 @@ class Upus(QWidget):
 
 if __name__ == '__main__':
     get_pic(upus_ico, "upus.ico")
-    # os.remove('upus.ico')
     app = QApplication(sys.argv)
     upus = Upus()
     upus.show()

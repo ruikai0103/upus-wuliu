@@ -1,0 +1,4 @@
+dist
+.idea/*
+_pycache_/*
+*.spec
