@@ -41,13 +41,18 @@ class Upus(QWidget):
 
         # 程序开始执行  按钮不可点击
         self.ui.pushButton.setEnabled(False)
-        self.myThread = LOPClass(file_path_name, sleep_time, thread_num)
+        radio_ip_isChecked = self.ui.radioButton.isChecked()
+        print(radio_ip_isChecked)
+        self.myThread = LOPClass(file_path_name, sleep_time, thread_num, radio_ip_isChecked)
         # 接受信号产生回调参数
         self.myThread.update_data.connect(self.Display)
         # 启动线程
         self.myThread.start()
         # 结束可以点击按钮
         self.ui.pushButton.setEnabled(True)
+
+    def radio_change(self):
+        pass
 
     def Display(self, data):
         self.ui.show_text.append(data + "\n")

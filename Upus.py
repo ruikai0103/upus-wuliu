@@ -7,6 +7,7 @@ from threading import Thread
 import PyQt5.sip
 import requests
 import xlrd
+import calendar
 import sys
 from math import ceil
 from retrying import retry
@@ -19,7 +20,7 @@ class LOPClass(QtCore.QThread):
     # 定义信号参数为list
     update_data = QtCore.pyqtSignal(str)
 
-    def __init__(self, file_path, sleep_time, thread_num):
+    def __init__(self, file_path, sleep_time, thread_num, is_proxies):
         super().__init__()
         # 按照多少分割
         self.split_num = 35
@@ -27,6 +28,8 @@ class LOPClass(QtCore.QThread):
         self.file_path = file_path
         self.sleep_time = sleep_time
         self.thread_num = thread_num
+        self.is_proxies = is_proxies
+        self.number = 0
         # 访问URL地址
         self.root_url = "https://zh-tools.usps.com/go/TrackConfirmAction"
         self.headers = {
@@ -48,7 +51,6 @@ class LOPClass(QtCore.QThread):
         # 创建一个csv 文件
         self.csv.create_csv()
         self.update_data.emit("副本文件创建成功！")
-        self.proxiesClass = GetProxies()
 
     def read_file(self):
         """
@@ -88,19 +90,24 @@ class LOPClass(QtCore.QThread):
         self.get_data(self.sleep_time)
         self.update_data.emit("-------------查询结束了-------------")
 
-    @retry(stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=3)
+    @retry(stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=3000)
     def get_response(self, params):
-        self.headers['Proxy-Authorization'] = self.proxiesClass.get_proxies()
         url = self.root_url + params
-        # self.update_data.emit(f"开始请求的URL为：{url}")
-        # self.update_data.emit(f"当前参数为：{params}")
-        html = requests.get(url=url, headers=self.headers, proxies=self.proxiesClass.proxies, verify=False,
-                            timeout=10).text
+        # true 代表使用代理
+        if self.is_proxies:
+            # 初始化IP
+            proxiesClass = GetProxies()
+            print("使用代理了")
+            self.headers['Proxy-Authorization'] = proxiesClass.get_proxies()
+            html = requests.get(url=url, headers=self.headers, proxies=proxiesClass.proxies, verify=False,
+                                timeout=10).text
+        else:
+            html = requests.get(url=url, headers=self.headers, verify=False, timeout=10).text
         return html
 
     def get_data(self, sleep_time=0):
         for param in self.item_list:
-            params = f"?tRef=fullpage&tLc={len(param) + 1}&text28777=&tLabels=" + ",".join(params)
+            params = f"?tRef=fullpage&tLc={len(param) + 1}&text28777=&tLabels=" + ",".join(param)
             try:
                 self.update_data.emit(f"当前携带参数个数共 {len(param)}  个")
                 html = self.get_response(params)
@@ -138,21 +145,39 @@ class LOPClass(QtCore.QThread):
                 'normalize-space(.//div[@class="panel-actions-content thPanalAction"]/hr[last()-2]/following-sibling::span[3]/text())')
             two_time = i.xpath(
                 'normalize-space(.//div[@class="panel-actions-content thPanalAction"]/hr[last()-2]/following-sibling::span[1]/strong/text())')
-
+            print(start_time)
+            print(f"结束时间：{two_time}")
+            start_time = self.formatting_time(start_time)
+            two_time = self.formatting_time(two_time)
             # global result_list
             # self.result_list = [tracking_number, state, sign_time, sign_log, start_time, start_log, two_time, two_log]
             # self.csv.write_excel(self.result_list)
-            result_list = [tracking_number, state, sign_time, sign_log, start_time, start_log, two_time, two_log]
+            self.number += 1
+            result_list = ["'" + tracking_number, state, sign_time, sign_log, start_time, start_log, two_time, two_log]
             self.csv.write_excel(result_list)
+            result_list.append(f"当前存入共{self.number}个")
             self.update_data.emit(",".join(result_list))
+
+    @staticmethod
+    def formatting_time(format_time):
+        """
+        输入一个没有格式化的时间，开始格式化     # November 24, 2020, 下午 11:56
+        :param format_time:  未格式化时间
+        :return: 格式化之后的  2020年 11月24号，下午11:56
+        """
+        month = re.match("\S+", format_time)
+        day = re.search("\d+", format_time)
+        year = re.search("\d{4}", format_time)
+        hour_minute_second = re.search("[\u4e00-\u9fa5]{1,2} \d{1,2}:\d{1,2}", format_time)
+
+        month = month.group() if month else ""
+        month = list(calendar.month_name).index(month)
+        day = day.group() if day else ""
+        year = year.group() if year else ""
+        hour_minute_second = hour_minute_second.group() if hour_minute_second else ""
+        return f"{year}年{month}月{day}日 {hour_minute_second}"
 
 
 if __name__ == '__main__':
-    debug = True
-
-    if debug:
-        file_path = "11"
-    else:
-        file_path = input(f"请输入文件名，和程序同一目录：")
-    Lop = LOPClass(file_path)
-    Lop.get_data(1)
+    aa = LOPClass.formatting_time("November 29, 2020")
+    print(aa)
