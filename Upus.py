@@ -4,6 +4,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import requests
 import re
 from threading import Thread
+from queue import Queue
 import PyQt5.sip
 import requests
 import xlrd
@@ -30,6 +31,8 @@ class LOPClass(QtCore.QThread):
         self.sleep_time = sleep_time
         self.thread_num = thread_num
         self.is_proxies = is_proxies
+        # 线程队列
+        self.params_queue = Queue()
         self.number = 0
         # 访问URL地址
         self.root_url = "https://zh-tools.usps.com/go/TrackConfirmAction"
@@ -85,12 +88,33 @@ class LOPClass(QtCore.QThread):
                 num += self.split_num
         return new_item_list
 
+    def queue_put(self):
+        for params in self.item_list:
+            self.params_queue.put(params)
+        if self.thread_num > 1:
+            self.update_data.emit(f"多线程队列写入成功，共有线程{self.thread_num}个")
+
     def run(self):
+        self.queue_put()
         self.update_data.emit("-------------开始查询，请勿多次点击！-------------")
         print("开始了！")
-        self.get_data(self.sleep_time)
+        thread_list = []
+        for i in self.thread_num:
+            t = Thread(target=self.start_thread)
+            t.setDaemon(True)
+            t.start()
+            thread_list.append(t)
+        for t in thread_list:
+            t.join()
+
         self.update_data.emit("-------------查询结束了-------------")
         self.stop_singin.emit(True)
+
+    def start_thread(self):
+        while not self.params_queue.empty():
+            params = self.params_queue.get()
+            self.get_data(params)
+
 
 
 
@@ -109,26 +133,25 @@ class LOPClass(QtCore.QThread):
             html = requests.get(url=url, headers=self.headers, verify=False, timeout=10).text
         return html
 
-    def get_data(self, sleep_time=0):
-        for param in self.item_list:
-            params = f"?tRef=fullpage&tLc={len(param) + 1}&text28777=&tLabels=" + ",".join(param)
-            try:
-                self.update_data.emit(f"当前携带参数个数共 {len(param)}  个")
-                html = self.get_response(params)
-            except Exception as e:
-                print(e)
-                self.update_data.emit("程序出现以下错误：请联系开发人员")
-                self.update_data.emit(str(e))
-                html = None
-            time.sleep(int(sleep_time))
-            self.parse_response(html)
+    def get_data(self, params):
+        params = f"?tRef=fullpage&tLc={len(params) + 1}&text28777=&tLabels=" + ",".join(params)
+        try:
+            self.update_data.emit(f"当前携带参数个数共 {len(params)}  个")
+            html = self.get_response(params)
+        except Exception as e:
+            print(e)
+            self.update_data.emit("程序出现以下错误：请联系开发人员")
+            self.update_data.emit(str(e))
+            html = None
+        time.sleep(int(self.sleep_time))
+        self.parse_response(html)
 
     def parse_response(self, html):
         """
         解析HTML页面
         :return:
         """
-        if not html:
+        if not html: 
             return
         html = etree.HTML(html)
         for i in html.xpath("//div[contains(@class,'col-sm-offset-1')]"):
@@ -185,4 +208,3 @@ class LOPClass(QtCore.QThread):
 if __name__ == '__main__':
     aa = LOPClass.formatting_time("November 29, 2020")
     print(aa)
-
