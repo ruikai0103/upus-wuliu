@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['PyqtForm.py'],
-             pathex=['E:\\工作\\upus-wuliu'],
+             pathex=['D:\\works\\upus-wuliu'],
              binaries=[],
              datas=[],
              hiddenimports=[],
