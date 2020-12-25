@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b24cc0a-cc3c-42ca-9be2-37e36c11f0a4" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Upus.py" beforeDir="false" afterPath="$PROJECT_DIR$/Upus.py" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+>>>>>>> 31f00b94688410cffd48feaf8f0e30ac26967d8d
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +46,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Python.Upus">
+=======
+  <component name="RunManager" selected="Python.PyqtForm">
+>>>>>>> 31f00b94688410cffd48feaf8f0e30ac26967d8d
     <configuration name="GetProxies" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LOP物流" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -177,9 +185,13 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Python.Upus" />
         <item itemvalue="Python.test" />
+=======
+>>>>>>> 31f00b94688410cffd48feaf8f0e30ac26967d8d
         <item itemvalue="Python.PyqtForm" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.pic" />
         <item itemvalue="Python.GetProxies" />
       </list>
@@ -213,8 +225,13 @@
       <workItem from="1607907524734" duration="4674000" />
       <workItem from="1607937249691" duration="3369000" />
       <workItem from="1608042110015" duration="1805000" />
+<<<<<<< HEAD
       <workItem from="1608549283075" duration="5528000" />
       <workItem from="1608893291150" duration="351000" />
+=======
+      <workItem from="1608549283075" duration="5441000" />
+      <workItem from="1608619067753" duration="3302000" />
+>>>>>>> 31f00b94688410cffd48feaf8f0e30ac26967d8d
     </task>
     <servers />
   </component>
@@ -253,6 +270,7 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607930271422" />
+<<<<<<< HEAD
     <state width="1877" height="238" key="GridCell.Tab.0.bottom" timestamp="1608893634343">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -270,21 +288,40 @@
     </state>
     <state width="1877" height="238" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608893634343" />
     <state width="1876" height="342" key="GridCell.Tab.1.bottom" timestamp="1607938015924">
+=======
+    <state width="1876" height="350" key="GridCell.Tab.0.bottom" timestamp="1608621497865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607938015924" />
-    <state width="1876" height="342" key="GridCell.Tab.1.center" timestamp="1607938015924">
+    <state width="1876" height="350" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608621497865" />
+    <state width="1876" height="350" key="GridCell.Tab.0.center" timestamp="1608621497865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607938015924" />
-    <state width="1876" height="342" key="GridCell.Tab.1.left" timestamp="1607938015923">
+    <state width="1876" height="350" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608621497865" />
+    <state width="1876" height="350" key="GridCell.Tab.0.left" timestamp="1608621497865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607938015923" />
-    <state width="1876" height="342" key="GridCell.Tab.1.right" timestamp="1607938015924">
+    <state width="1876" height="350" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608621497865" />
+    <state width="1876" height="350" key="GridCell.Tab.0.right" timestamp="1608621497865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="342" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607938015924" />
+    <state width="1876" height="350" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608621497865" />
+    <state width="1876" height="342" key="GridCell.Tab.1.bottom" timestamp="1608621055920">
+>>>>>>> 31f00b94688410cffd48feaf8f0e30ac26967d8d
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608621055920" />
+    <state width="1876" height="342" key="GridCell.Tab.1.center" timestamp="1608621055920">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="342" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608621055920" />
+    <state width="1876" height="342" key="GridCell.Tab.1.left" timestamp="1608621055920">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="342" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608621055920" />
+    <state width="1876" height="342" key="GridCell.Tab.1.right" timestamp="1608621055920">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="342" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608621055920" />
     <state x="463" y="151" key="SettingsEditor" timestamp="1607937164878">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -307,7 +344,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Upus.py</url>
-          <line>121</line>
+          <line>122</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -322,33 +359,46 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/PyqtForm.py</url>
-          <line>67</line>
-          <option name="timeStamp" value="14" />
+          <line>46</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Upus.py</url>
-          <line>89</line>
-          <option name="timeStamp" value="15" />
+          <line>97</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/PyqtForm.py</url>
-          <line>46</line>
-          <option name="timeStamp" value="16" />
+          <url>file://$PROJECT_DIR$/Upus.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Upus.py</url>
+          <line>118</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Upus.py</url>
+          <line>136</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/upus_wuliu$pyqt_form.coverage" NAME="pyqt_form Coverage Results" MODIFIED="1607783669305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/LOP$LOP.coverage" NAME="LOP Coverage Results" MODIFIED="1607699889101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/upus_wuliu$test.coverage" NAME="test Coverage Results" MODIFIED="1608552129848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/upus_wuliu$PyqtForm.coverage" NAME="PyqtForm Coverage Results" MODIFIED="1608551684853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/upus_wuliu$pyQt_upus.coverage" NAME="pyQt_upus Coverage Results" MODIFIED="1607762213651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/upus_wuliu$.coverage" NAME="中国天气 Coverage Results" MODIFIED="1607756302791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../随意/pyQt5测试" />
     <SUITE FILE_PATH="coverage/upus_wuliu$pic.coverage" NAME="pic Coverage Results" MODIFIED="1607843085395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/upus_wuliu$PyqtForm__1_.coverage" NAME="PyqtForm (1) Coverage Results" MODIFIED="1607843387905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/upus_wuliu$GetProxies.coverage" NAME="GetProxies Coverage Results" MODIFIED="1607829466448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$PyqtForm.coverage" NAME="PyqtForm Coverage Results" MODIFIED="1608621086526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$.coverage" NAME="中国天气 Coverage Results" MODIFIED="1607756302791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../随意/pyQt5测试" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$test.coverage" NAME="test Coverage Results" MODIFIED="1608552129848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/upus_wuliu$CallWeatherWin.coverage" NAME="CallWeatherWin Coverage Results" MODIFIED="1607757360494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../随意/pyQt5测试" />
+<<<<<<< HEAD
     <SUITE FILE_PATH="coverage/upus_wuliu$Upus.coverage" NAME="Upus Coverage Results" MODIFIED="1608893634322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+=======
+    <SUITE FILE_PATH="coverage/LOP$LOP.coverage" NAME="LOP Coverage Results" MODIFIED="1607699889101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$PyqtForm__1_.coverage" NAME="PyqtForm (1) Coverage Results" MODIFIED="1607843387905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/upus_wuliu$pyqt_form.coverage" NAME="pyqt_form Coverage Results" MODIFIED="1607783669305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+>>>>>>> 31f00b94688410cffd48feaf8f0e30ac26967d8d
   </component>
 </project>

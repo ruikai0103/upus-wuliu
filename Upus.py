@@ -28,8 +28,8 @@ class LOPClass(QtCore.QThread):
         self.split_num = 35
         # self.file_path = f'./{file_path}.xlsx'
         self.file_path = file_path
-        self.sleep_time = sleep_time
-        self.thread_num = thread_num
+        self.sleep_time = int(sleep_time)
+        self.thread_num = int(thread_num)
         self.is_proxies = is_proxies
         # 线程队列
         self.params_queue = Queue()
@@ -80,6 +80,9 @@ class LOPClass(QtCore.QThread):
         :param item_list:
         :return:
         """
+        # 列表开始去重
+        item_list = list(set(item_list))
+        self.update_data.emit(f"参数已经作去重处理，共有参数：{len(item_list)}个")
         new_item_list = []
         num = 0
         for i in range(ceil(len(item_list) / self.split_num)):
@@ -91,6 +94,7 @@ class LOPClass(QtCore.QThread):
     def queue_put(self):
         for params in self.item_list:
             self.params_queue.put(params)
+
         if self.thread_num > 1:
             self.update_data.emit(f"多线程队列写入成功，共有线程{self.thread_num}个")
 
@@ -99,7 +103,7 @@ class LOPClass(QtCore.QThread):
         self.update_data.emit("-------------开始查询，请勿多次点击！-------------")
         print("开始了！")
         thread_list = []
-        for i in self.thread_num:
+        for i in range(self.thread_num):
             t = Thread(target=self.start_thread)
             t.setDaemon(True)
             t.start()
@@ -115,9 +119,6 @@ class LOPClass(QtCore.QThread):
             params = self.params_queue.get()
             self.get_data(params)
 
-
-
-
     @retry(stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=3000)
     def get_response(self, params):
         url = self.root_url + params
@@ -125,7 +126,6 @@ class LOPClass(QtCore.QThread):
         if self.is_proxies:
             # 初始化IP
             proxiesClass = GetProxies()
-            print("使用代理了")
             self.headers['Proxy-Authorization'] = proxiesClass.get_proxies()
             html = requests.get(url=url, headers=self.headers, proxies=proxiesClass.proxies, verify=False,
                                 timeout=10).text
@@ -133,15 +133,17 @@ class LOPClass(QtCore.QThread):
             html = requests.get(url=url, headers=self.headers, verify=False, timeout=10).text
         return html
 
-    def get_data(self, params):
-        params = f"?tRef=fullpage&tLc={len(params) + 1}&text28777=&tLabels=" + ",".join(params)
+    def get_data(self, param):
+        params = f"?tRef=fullpage&tLc={len(param) + 1}&text28777=&tLabels=" + ",".join(param)
         try:
-            self.update_data.emit(f"当前携带参数个数共 {len(params)}  个")
+            # self.update_data.emit(f"当前携带参数个数共 {len(param)}  个")
             html = self.get_response(params)
         except Exception as e:
             print(e)
-            self.update_data.emit("程序出现以下错误：请联系开发人员")
+            self.update_data.emit("程序出现以下错误：只是简单的代理IP失效了而已！")
             self.update_data.emit(str(e))
+            self.params_queue.put(param)
+            self.update_data.emit("参数已经重新上传，请耐心等待。")
             html = None
         time.sleep(int(self.sleep_time))
         self.parse_response(html)
@@ -151,7 +153,7 @@ class LOPClass(QtCore.QThread):
         解析HTML页面
         :return:
         """
-        if not html: 
+        if not html:
             return
         html = etree.HTML(html)
         for i in html.xpath("//div[contains(@class,'col-sm-offset-1')]"):
