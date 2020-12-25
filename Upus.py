@@ -202,9 +202,14 @@ class LOPClass(QtCore.QThread):
         day = day.group() if day else ""
         year = year.group() if year else ""
         hour_minute_second = hour_minute_second.group() if hour_minute_second else ""
-        return f"{year}年{month}月{day}日 {hour_minute_second}"
+        if "上午" in hour_minute_second:
+            hour_minute_second = hour_minute_second[-5:]
+        if "下午" in hour_minute_second:
+            hour = 12+int(hour_minute_second[-5:-3])
+            hour_minute_second = f"{hour}:{hour_minute_second[-2:]}"
+        return f"{year}/{month}/{day} {hour_minute_second}"
 
 
 if __name__ == '__main__':
-    aa = LOPClass.formatting_time("November 29, 2020")
+    aa = LOPClass.formatting_time("November 24, 2020, 下午 11:56")
     print(aa)
