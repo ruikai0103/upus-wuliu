@@ -62,7 +62,7 @@ class Ui_Form(object):
         font.setPointSize(12)
         self.thread_num.setFont(font)
         self.thread_num.setMinimum(1)
-        self.thread_num.setMaximum(5)
+        self.thread_num.setMaximum(50)
         self.thread_num.setObjectName("thread_num")
         self.label_2 = QtWidgets.QLabel(Form)
         self.label_2.setGeometry(QtCore.QRect(380, 70, 61, 31))

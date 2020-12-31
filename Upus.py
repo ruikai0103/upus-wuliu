@@ -1,5 +1,7 @@
 # -*- coding:utf-8 -*-
 import time
+from datetime import datetime
+import datetime as date
 from PyQt5 import QtCore, QtGui, QtWidgets
 import requests
 import re
@@ -178,9 +180,7 @@ class LOPClass(QtCore.QThread):
             print(f"结束时间：{two_time}")
             start_time = self.formatting_time(start_time)
             two_time = self.formatting_time(two_time)
-            # global result_list
-            # self.result_list = [tracking_number, state, sign_time, sign_log, start_time, start_log, two_time, two_log]
-            # self.csv.write_excel(self.result_list)
+            sign_time = self.formatting_time(sign_time)
             self.number += 1
             result_list = ["'" + tracking_number, state, sign_time, sign_log, start_time, start_log, two_time, two_log]
             self.csv.write_excel(result_list)
@@ -207,11 +207,13 @@ class LOPClass(QtCore.QThread):
         if "上午" in hour_minute_second:
             hour_minute_second = hour_minute_second[-5:]
         if "下午" in hour_minute_second:
-            hour = 12+int(hour_minute_second[-5:-3])
+            hour = 12 + int(hour_minute_second[-5:-3])
+            if hour >= 24:
+                return datetime.strptime(f"{year}/{month}/{day} 00:{hour_minute_second[-2:]}", '%Y/%m/%d %H:%M') + date.timedelta(days = 1)
             hour_minute_second = f"{hour}:{hour_minute_second[-2:]}"
         return f"{year}/{month}/{day} {hour_minute_second}"
 
 
 if __name__ == '__main__':
-    aa = LOPClass.formatting_time("November 24, 2020, 下午 11:56")
+    aa = LOPClass.formatting_time("November 24, 2020, 上午 10:28")
     print(aa)
