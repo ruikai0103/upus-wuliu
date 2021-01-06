@@ -6,6 +6,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import requests
 import re
 from threading import Thread
+import threading
 from queue import Queue
 import PyQt5.sip
 import requests
@@ -51,12 +52,12 @@ class LOPClass(QtCore.QThread):
             'accept-language': 'zh-CN,zh;q=0.9',
         }
         self.csv = Write_csv()
-        self.item_list = self.split_item_list(self.read_file())
         # 要保存的csv文件
         self.csv.to_csv = f"{self.file_path.replace('.xlsx', '副本.csv')}"
         # 创建一个csv 文件
         self.csv.create_csv()
         self.update_data.emit("副本文件创建成功！")
+        self._value_lock = threading.Lock()
 
     def read_file(self):
         """
@@ -84,7 +85,7 @@ class LOPClass(QtCore.QThread):
         """
         # 列表开始去重
         item_list = list(set(item_list))
-        self.update_data.emit(f"参数已经作去重处理，共有参数：{len(item_list)}个")
+        self.update_data.emit(f"参数已经作去重处理，共有单号：{len(item_list)}个")
         new_item_list = []
         num = 0
         for i in range(ceil(len(item_list) / self.split_num)):
@@ -94,15 +95,16 @@ class LOPClass(QtCore.QThread):
         return new_item_list
 
     def queue_put(self):
-        for params in self.item_list:
+        item_list = self.split_item_list(self.read_file())
+        for params in item_list:
             self.params_queue.put(params)
 
         if self.thread_num > 1:
             self.update_data.emit(f"多线程队列写入成功，共有线程{self.thread_num}个")
 
     def run(self):
-        self.queue_put()
         self.update_data.emit("-------------开始查询，请勿多次点击！-------------")
+        self.queue_put()
         print("开始了！")
         thread_list = []
         for i in range(self.thread_num):
@@ -118,8 +120,17 @@ class LOPClass(QtCore.QThread):
 
     def start_thread(self):
         while not self.params_queue.empty():
+            self._value_lock.acquire()
             params = self.params_queue.get()
+            self._value_lock.release()
+            print(f"当前队列数量：{self.params_queue.qsize()}")
             self.get_data(params)
+            # self.params_queue.task_done()
+            time.sleep(1)
+            # else:
+            #     self._value_lock.release()
+            #     print("111")
+            #     time.sleep(3)
 
     @retry(stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=3000)
     def get_response(self, params):
@@ -130,7 +141,7 @@ class LOPClass(QtCore.QThread):
             proxiesClass = GetProxies()
             self.headers['Proxy-Authorization'] = proxiesClass.get_proxies()
             html = requests.get(url=url, headers=self.headers, proxies=proxiesClass.proxies, verify=False,
-                                timeout=10).text
+                                timeout=5).text
         else:
             html = requests.get(url=url, headers=self.headers, verify=False, timeout=10).text
         return html
@@ -145,9 +156,19 @@ class LOPClass(QtCore.QThread):
             self.update_data.emit("程序出现以下错误：只是简单的代理IP失效了而已！")
             self.update_data.emit(str(e))
             self.params_queue.put(param)
-            self.update_data.emit("参数已经重新上传，请耐心等待。")
+            self.update_data.emit("参数已经重新上传，请耐心等待。如果多次出现，建议降低线程数，土豪随意！！")
             html = None
         time.sleep(int(self.sleep_time))
+        if not html:
+            return
+        if "You do not have permission" in html:
+            # 这个表示获取到了，但是不返回数据
+            self.params_queue.put(param)
+            self.update_data.emit(f"*"*30)
+            self.update_data.emit(f"{html}")
+            self.update_data.emit(f"*"*30)
+            self.update_data.emit(f"当前网页拒绝访问了，参数已经重新上传，")
+            return
         self.parse_response(html)
 
     def parse_response(self, html):
@@ -155,8 +176,6 @@ class LOPClass(QtCore.QThread):
         解析HTML页面
         :return:
         """
-        if not html:
-            return
         html = etree.HTML(html)
         for i in html.xpath("//div[contains(@class,'col-sm-offset-1')]"):
             # 获取单号
@@ -176,16 +195,19 @@ class LOPClass(QtCore.QThread):
                 'normalize-space(.//div[@class="panel-actions-content thPanalAction"]/hr[last()-2]/following-sibling::span[3]/text())')
             two_time = i.xpath(
                 'normalize-space(.//div[@class="panel-actions-content thPanalAction"]/hr[last()-2]/following-sibling::span[1]/strong/text())')
-            print(start_time)
-            print(f"结束时间：{two_time}")
+            # print(start_time)
+            # print(f"结束时间：{two_time}")
             start_time = self.formatting_time(start_time)
             two_time = self.formatting_time(two_time)
             sign_time = self.formatting_time(sign_time)
-            self.number += 1
-            result_list = ["'" + tracking_number, state, sign_time, sign_log, start_time, start_log, two_time, two_log]
-            self.csv.write_excel(result_list)
-            result_list.append(f"当前存入共{self.number}个")
-            self.update_data.emit(",".join(result_list))
+            print(f"存入{self.number}")
+            with self._value_lock:
+                self.number += 1
+                result_list = ["'" + tracking_number, state, sign_time, sign_log, start_time, start_log, two_time,
+                               two_log]
+                self.csv.write_excel(result_list)
+                result_list.append(f"当前存入共{self.number}个")
+                self.update_data.emit(",".join(f"{i}" for i in result_list))
 
     @staticmethod
     def formatting_time(format_time):
@@ -207,9 +229,12 @@ class LOPClass(QtCore.QThread):
         if "上午" in hour_minute_second:
             hour_minute_second = hour_minute_second[-5:]
         if "下午" in hour_minute_second:
-            hour = 12 + int(hour_minute_second[-5:-3])
-            if hour >= 24:
-                return datetime.strptime(f"{year}/{month}/{day} 00:{hour_minute_second[-2:]}", '%Y/%m/%d %H:%M') + date.timedelta(days = 1)
+            if "12" in hour_minute_second[-5:-3]:
+                hour = hour_minute_second[-5:-3]
+            else:
+                hour = 12 + int(hour_minute_second[-5:-3])
+            # if hour >= 24:
+            #     return datetime.strptime(f"{year}/{month}/{day} 00:{hour_minute_second[-2:]}", '%Y/%m/%d %H:%M') + date.timedelta(days = 1)
             hour_minute_second = f"{hour}:{hour_minute_second[-2:]}"
         return f"{year}/{month}/{day} {hour_minute_second}"
 
